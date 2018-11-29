@@ -9,20 +9,20 @@ help() {
   Arguments:
     -f, --file          File to upload
     -u, --user          User name for Bintray authentication
-    -k, --key)          API key for Bintray authentication
-    -u, --url)          URL where the file will be uploaded, if absent,
+    -k, --key           API key for Bintray authentication
+    -u, --url           URL where the file will be uploaded, if absent,
                         the URL is build from other arguments
-    -s, --subject)      Subject where the file will be uploaded
-    -r, --repo)         Repository where the file will be uploaded
-    -p, --package)      Package where the file will be uploaded
-    -d, --dest-file)    Path and name of the destination file
-    --base-url)         Base URL of Bintray
+    -s, --subject       Subject where the file will be uploaded
+    -r, --repo          Repository where the file will be uploaded
+    -p, --package       Package where the file will be uploaded
+    -d, --dest-file     Path and name of the destination file
+    --base-url          Base URL of Bintray
                         (default: https://api.bintray.com)
-    -t, --type)         Resource type (content or maven)
+    -t, --type          Resource type (content or maven)
                         (default: content)
-    -v, --version)      Version of the uploaded file
-    -e, --extra-param)  Additional parameter, can be invoked several times
-    -h, --help)         This message
+    -v, --version       Version of the uploaded file
+    -e, --extra-param   Additional parameter, can be invoked several times
+    -h, --help          This message
 _EOF_
   exit 1
 }
@@ -43,7 +43,7 @@ while [[ $# -gt 0 ]]; do
     -s|--subject)      PLUGIN_SUBJECT=$2;   shift 2;;
     -r|--repo)         PLUGIN_REPO=$2;      shift 2;;
     -p|--package)      PLUGIN_PACKAGE=$2;   shift 2;;
-    -d|--dest-file)    PLUGIN_DEST_FILE=$2  shift 2;;
+    -d|--dest-file)    PLUGIN_DEST_FILE=$2; shift 2;;
     --base-url)        PLUGIN_BASE_URL=$2;  shift 2;;
     -t|--type)         PLUGIN_TYPE=$2;      shift 2;;
     -v|--version)      PLUGIN_VERSION=$2;   shift 2;;
@@ -79,3 +79,4 @@ done
 echo "Uploading $PLUGIN_FILE to $PLUGIN_URL"
 
 curl -T $PLUGIN_FILE -u${PLUGIN_USER}:${PLUGIN_KEY} $PLUGIN_URL
+echo
