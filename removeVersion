@@ -18,7 +18,7 @@ help() {
                     (default: https://api.bintray.com)
     -v, --version)  Version number to be removed
     -h, --help)     This message
-  _EOF_
+_EOF_
   exit 1
 }
 

@@ -23,7 +23,7 @@ help() {
     -v, --version)      Version of the uploaded file
     -e, --extra-param)  Additional parameter, can be invoked several times
     -h, --help)         This message
-  _EOF_
+_EOF_
   exit 1
 }
 
